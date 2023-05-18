@@ -1,0 +1,68 @@
+<!-- mouse over -->
+<!-- mouse out -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Events2</title>
+
+    <style>
+        .selected {
+            color: red;
+        }
+
+        .done{
+            text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+    
+   <h1>My First POST</h1>
+
+   <ul>
+
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+   </ul>
+
+   <script>
+    
+    var lis= document.querySelectorAll('li');
+    for (var i=0;i<lis.length;i++){
+    lis[i].addEventListener('mouseover',function(){
+    //this represend lis[i]
+        // this.style.color ="red"
+        this.classList.add('selected')
+         
+    })
+
+    lis[i].addEventListener('mouseout',function(){
+          
+        //   this.style.color ="black"
+        this.classList.remove('selected')
+           
+      })
+
+    lis[i].addEventListener('mouseout',function(){
+          
+          //   this.style.color ="black"
+          this.classList.remove('selected')
+             
+        })
+
+    lis[i].addEventListener('click',function(){
+          
+          
+        //   this.style.textDecoration = "line-through";
+        this.classList.toggle('done')
+             
+        })    
+    }
+   </script>
+
+</body>
+</html>

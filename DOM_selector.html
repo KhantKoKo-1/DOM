@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector</title>
+</head>
+<body>
+    
+  
+    <h1 class="bloded">My Second Post</h1>
+     <ul>
+
+        <li id ="first">List Item 1</li>
+        <li class="bloded">List Item 2</li>
+        <li class="bloded">List Item 3</li>
+
+     </ul>
+    <script>
+     var element = document.getElementById("first");
+     console.log(element,' id selector');   
+     
+     var class_elements = document.getElementsByClassName('bloded');
+      //return = elemets array
+     console.log(class_elements,'class selector')    
+     
+     var tag_elements = document.getElementsByTagName('li');
+      //return = elemets array
+     console.log(tag_elements,'Tag selector')    
+     
+      //return = only first element
+     console.log(document.querySelector("#first"),'queryselector')
+     
+     //return = all element
+     console.log(document.querySelectorAll(".bloded"),'queryselector')
+
+    </script>
+
+</body>
+</html>

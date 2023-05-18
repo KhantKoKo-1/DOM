@@ -1,0 +1,50 @@
+<!-- Clicking -->
+<!-- Hovering -->
+<!-- Dragging and Dropping -->
+<!-- Pressing Key -->
+<!-- elemet.addEventListener(type,FunctionToCall); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Events</title>
+</head>
+<body>
+    
+   <h1>My First POST</h1>
+
+   <ul>
+
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+   </ul>
+
+   <script>
+    var h1 = document.querySelector('h1');
+    h1.addEventListener('click',()=>{
+    alert('hello')
+
+
+    h1.style.background = "yellow"
+    });
+   
+    var lis =document.querySelectorAll('li');//return array so we should do lopping
+    //like this
+    console.log(lis)
+    var i=0
+    for(i=0;i<lis.length;i++){
+        lis[i].addEventListener('click',()=>{
+    //event.target refers to the element that triggered the click event
+         event.target.style.color = "red";
+   
+    });
+    }
+   </script>
+
+
+</body>
+</html>

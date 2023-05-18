@@ -1,0 +1,98 @@
+<!-- changing an element's style -->
+<!-- adding/removing class -->
+<!-- changing to content of a tag -->
+<!-- changing attributes(src,href,etc.) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector</title>
+    <style>
+        .special {
+            color: red;
+            font-size: 48px;
+            border : 3px solid blue;
+        }
+
+        .second{
+            padding: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>This is a paragraph</p>
+
+    <h1 id ="first">My First Post</h1>
+    <h1 class="bloded">My Second Post</h1>
+    <ul>  </ul>
+    <a href="http://www.google.com">Google Link</a>
+    <br><br>
+    <img src="image/2.jpg" alt="">
+
+     
+     
+<!-- changing an element's style -->
+<!-- adding/removing class -->
+     <script>
+        var element = document.getElementById('first')
+        console.log(element)
+        
+        // element.style.color = 'red';
+        // element.style.backgroundColor = 'black'
+        // element.style.fontSize = '48px';
+        
+        // element.classList.add("special")
+        // element.classList.add("second")
+        // element.classList.remove("special")
+        // element.classList.remove("second")
+         
+
+        //  return < false <-> true >
+         element.classList.toggle("special");
+         element.classList.toggle("second");
+
+     </script>
+
+<!-- changing to content of a tag -->
+     <script>
+
+      var tag = document.getElementById('first');
+      console.log(tag.textContent);
+      tag.textContent = "Hello World"
+      
+    //   return = array
+      var tag2 = document.getElementsByTagName("h1")[1];
+      tag2.textContent = "Good Bye"
+      
+      var ul_tag  = document.querySelector("ul");
+    //  ul_tag.textContent = '<li>First item</li>';//return only text
+    //  so we can use innerHtml for add element like this
+      ul_tag.innerHTML = "<li>First item</li>"
+
+      var p_tag = document.getElementsByTagName('p')[0];
+      p_tag.textContent = 'My <strong>first</strong> Paragraph'//return only text
+      //so we can use innerHtml for add element like this
+      p_tag.innerHTML='My <strong>first</strong> Paragraph'
+
+     </script>
+
+<!-- changing attributes(src,href,etc.) -->
+      <script>
+      var tag = document.querySelector('a')
+      console.log(tag.getAttribute('href'),'not change')
+      tag.setAttribute('href','http://www.twitter.com')
+      console.log(tag.getAttribute('href'),'changed')
+      
+      var img_tag = document.querySelector('img');
+      console.log(img_tag.getAttribute('src'),'not change')
+      img_tag.setAttribute('src','image/3.jpg')
+      console.log(img_tag.getAttribute('src'),'changed')
+      
+      </script>
+   
+</body>
+</html>
